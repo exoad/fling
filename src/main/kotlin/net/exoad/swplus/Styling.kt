@@ -5,6 +5,21 @@ import java.awt.Component
 import javax.swing.JComponent
 import javax.swing.border.Border
 
+fun color(r: Int, g: Int, b: Int, a: Int = 255): Color
+{
+    return Color(r, g, b, a)
+}
+
+fun color(r: Float, g: Float, b: Float, a: Float = 1.0F): Color
+{
+    return Color(r, g, b, a)
+}
+
+fun color(rgb: Int): Color
+{
+    return Color(rgb)
+}
+
 class Modifier
 {
     var padding: Border? = null

@@ -6,6 +6,7 @@ import java.awt.Component.CENTER_ALIGNMENT
 import java.awt.Component.LEFT_ALIGNMENT
 import java.awt.Component.RIGHT_ALIGNMENT
 import java.awt.Component.TOP_ALIGNMENT
+import java.awt.GridLayout
 import java.awt.LayoutManager
 import javax.swing.Box.createHorizontalStrut
 import javax.swing.Box.createVerticalStrut
@@ -18,6 +19,24 @@ enum class Alignment(val componentValue: Float)
     CENTER(CENTER_ALIGNMENT),
     LEFT(LEFT_ALIGNMENT),
     RIGHT(RIGHT_ALIGNMENT)
+}
+
+fun grid(
+    rows: Int,
+    columns: Int,
+    horizontalGap: Int = 4,
+    verticalGap: Int = 4,
+    modifier: Modifier? = null,
+    content: MultiChildrenScope.() -> Unit,
+): JPanel
+{
+    val scope = MultiChildrenScope()
+    scope.content()
+    return JPanel().apply {
+        layout = GridLayout(rows, columns, horizontalGap, verticalGap)
+        scope.children.forEach { add(it) }
+        applyModifier(modifier)
+    }
 }
 
 fun scaffold(

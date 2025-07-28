@@ -23,7 +23,7 @@ fun button(
     return JButton(text).apply {
         if(outlined)
         {
-            background = Color(0, 0, 0, 0)
+            background = color(0, 0, 0, 0)
         }
         if(icon != null)
         {
