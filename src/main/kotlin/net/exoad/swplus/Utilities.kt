@@ -1,4 +1,4 @@
-package net.exoad.compsw
+package net.exoad.swplus
 
 import java.awt.Component
 import javax.swing.BorderFactory

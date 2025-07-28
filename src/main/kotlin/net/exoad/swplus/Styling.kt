@@ -1,4 +1,4 @@
-package net.exoad.compsw
+package net.exoad.swplus
 
 import java.awt.Color
 import java.awt.Component

@@ -1,4 +1,4 @@
-package net.exoad.compsw
+package net.exoad.swplus
 
 import com.formdev.flatlaf.extras.FlatSVGIcon
 import java.awt.*

@@ -1,4 +1,4 @@
-package net.exoad.compsw
+package net.exoad.swplus
 
 class MutableState<T>(initialValue: T)
 {

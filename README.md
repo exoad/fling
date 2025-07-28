@@ -1,4 +1,4 @@
-# Fling
+# Swing+
 
 ***Modernizing Swing's Pattern***
 
@@ -10,10 +10,10 @@ is what makes it fun, but with Kotlin becoming more and more popular along with 
 declarative doctrine, Swing shows its outdated patterns. Not only do these outdated patterns increase development 
 time, but also boilerplate and eventually becoming a productivity killer.
 
-Fling shifts this productivity killing pattern to a more modern approach by using declarative syntax. 
+Swing+ shifts this productivity killing pattern to a more modern approach by using declarative syntax. 
 This 
-is done by mapping a lot of normal Swing types to composable functions similar to Jetpack Compose. At the same time, 
-Fling introduces a lot of additional layout components to help with reducing boilerplate for common 
+is done by mapping a lot of normal Swing types to composable functions similar to Jetpack Compose. At the same time,
+Swing+ introduces a lot of additional layout components to help with reducing boilerplate for common 
 layouts like rows and columns. Here are some comparisons
 
 ### Comparison #1
@@ -30,7 +30,7 @@ val col = JPanel().apply {
 }
 ```
 
-**Fling**
+**Swing+**
 ```kotlin 
 col {      
     +button("Button 1") { print("Hello World!") }       
@@ -58,7 +58,7 @@ val panel = JPanel().apply {
 }
 ```
 
-#### Fling
+#### Swing+
 
 *Please note that Composable*
 
