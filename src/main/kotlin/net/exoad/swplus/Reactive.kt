@@ -1,5 +1,8 @@
 package net.exoad.swplus
 
+import javax.swing.JFrame
+import javax.swing.SwingUtilities
+
 class MutableState<T>(initialValue: T)
 {
     private var _value = initialValue
@@ -34,4 +37,12 @@ class MutableState<T>(initialValue: T)
 fun <T> remember(initialValue: T): MutableState<T>
 {
     return MutableState(initialValue)
+}
+
+fun showFrame(frame: JFrame)
+{
+    SwingUtilities.invokeLater {
+        frame.pack()
+        frame.isVisible = true
+    }
 }

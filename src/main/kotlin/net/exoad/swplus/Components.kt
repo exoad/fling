@@ -5,11 +5,41 @@ import java.awt.*
 import java.awt.event.ActionListener
 import java.io.File
 import javax.swing.*
+import javax.swing.WindowConstants.*
 import javax.swing.filechooser.FileFilter
 
 fun svg(path: String, width: Int = 16, height: Int = 16): Icon
 {
     return FlatSVGIcon(path, width, height)
+}
+
+enum class WindowCloseOperation(val componentValue: Int)
+{
+    EXIT(EXIT_ON_CLOSE),
+    MINIMIZE(HIDE_ON_CLOSE),
+    IGNORE(DO_NOTHING_ON_CLOSE),
+    DISPOSE(DISPOSE_ON_CLOSE)
+}
+
+fun frame(
+    title: String,
+    closeOperation: WindowCloseOperation,
+    icon: Image? = null,
+    modifier: Modifier? = null,
+    content: SingleChildScope.() -> Unit,
+): JFrame
+{
+    val scope = SingleChildScope()
+    scope.content()
+    return JFrame(title).apply {
+        if(icon != null)
+        {
+            iconImage = icon
+        }
+        contentPane = scope.child as Container
+        defaultCloseOperation = closeOperation.componentValue
+        applyModifier(modifier)
+    }
 }
 
 fun button(
